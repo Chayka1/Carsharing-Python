@@ -18,7 +18,6 @@ class Logic:
         brand = input('Марка: ')
         model = input('Модель: ')
         key_copy_cars_price = tuple(self.cars_price.keys())
-        key_copy_cars = tuple(self.cars.keys())
         for models in key_copy_cars_price:
             if models == model:
                 print(f'Стоимость данной машины в час составит {self.cars_price[model]}$')
