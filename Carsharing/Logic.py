@@ -23,6 +23,7 @@ class Logic:
                 print(f'Стоимость данной машины в час составит {self.cars_price[model]}$')
                 del self.cars_price[model]
                 del self.cars[model]
+                break
             else:
                 print('Машину не найдено. Введите существующую модель!')
 
@@ -35,8 +36,7 @@ class Logic:
         car = []
 
         for carAndPrice in self.cars_price:
-            i = f'{carAndPrice} {self.cars_price[carAndPrice]}$'
-            car_price.append(i)
+            car_price.append(f'{carAndPrice} {self.cars_price[carAndPrice]}$')
 
         for cars in self.cars:
             car.append(self.cars[cars])
