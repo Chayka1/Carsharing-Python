@@ -18,8 +18,7 @@ class Logic:
         for car in self.cars:
             if car['brand'] == brand and car['model'] == model:
                 print(f"Стоимость данной машины в час составит {car['price']}$")
-                i = self.cars.index({'brand': brand, 'model': model, 'price': car['price']})
-                del self.cars[i]
+                del self.cars[self.cars.index({'brand': brand, 'model': model, 'price': car['price']})]
                 break
             else:
                 print('Машину не найдено. Введите существующую модель!')
