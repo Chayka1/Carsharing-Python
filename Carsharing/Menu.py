@@ -4,8 +4,7 @@ from Carsharing.Logic import Logic
 add_car = 1
 take_a_car_to_car_sharing = 2
 list_of_available_cars = 3
-price_information = 4
-quit = 5
+quit = 4
 
 log = Logic()
 
@@ -15,8 +14,7 @@ def get_menu_choice():
                        '1. Добавить машину\n'
                        '2. Взять машину в каршеринг\n'
                        '3. Список доступных машин\n'
-                       '4. Информация по цене\n'
-                       '5. Выход\n'))
+                       '4. Выход\n'))
 
     return choice
 
@@ -37,10 +35,6 @@ def main():
 
         elif choice == list_of_available_cars:
             log.list_of_available_cars()
-            input('Для продолжения нажмите Enter')
-
-        elif choice == price_information:
-            log.price_information()
             input('Для продолжения нажмите Enter')
 
         elif choice == quit:
