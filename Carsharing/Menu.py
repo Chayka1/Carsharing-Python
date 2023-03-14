@@ -1,6 +1,4 @@
-from Carsharing.Cars import Cars
 from Carsharing.Logic import Logic
-
 
 add_car = 1
 take_a_car_to_car_sharing = 2
