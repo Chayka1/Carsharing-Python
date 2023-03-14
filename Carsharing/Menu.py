@@ -32,15 +32,15 @@ def main():
 
         if choice == add_car:
             log.add_car()
-            input('Для продолжения нажмите Enter')
+            print()
 
         elif choice == take_a_car_to_car_sharing:
             log.take_a_car_to_car_sharing()
-            input('Для продолжения нажмите Enter')
+            print()
 
         elif choice == list_of_available_cars:
             log.list_of_available_cars()
-            input('Для продолжения нажмите Enter')
+            print()
 
         elif choice == quit:
             break
