@@ -14,18 +14,18 @@ class Logic:
         model = input('Модель: ')
         price_per_hour = int(input('Цена за час в $: '))
         car = Car(brand, model, price_per_hour)
-        self.cur.execute('INSERT INTO cars VALUES (?, ?, ?)', (brand, model, price_per_hour))
+        self.cur.execute('INSERT INTO cars VALUES (?, ?, ?)', (brand.upper(), model.upper(), price_per_hour))
         self.conn.commit()
 
     def take_a_car_to_car_sharing(self):
         brand = input('Марка: ')
         model = input('Модель: ')
-        self.cur.execute('SELECT * FROM cars WHERE brand = ? AND model = ?', (brand, model))
+        self.cur.execute('SELECT * FROM cars WHERE brand = ? AND model = ?', (brand.upper(), model.upper()))
         row = self.cur.fetchone()
         if row is not None:
             car = Car(*row)
             print(f"Стоимость данной машины в час составит {car.price_per_hour}$")
-            self.cur.execute('DELETE FROM cars WHERE brand = ? AND model = ?', (brand, model))
+            self.cur.execute('DELETE FROM cars WHERE brand = ? AND model = ?', (brand.upper(), model.upper()))
             self.conn.commit()
         else:
             print('Машину не найдено. Введите существующую модель!')
