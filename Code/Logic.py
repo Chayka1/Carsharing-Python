@@ -1,11 +1,11 @@
-from Carsharing.Cars import Car
+from Cars import Car
 import sqlite3
 
 
 class Logic:
 
     def __init__(self):
-        self.conn = sqlite3.connect('carsharing.db')
+        self.conn = sqlite3.connect('DataBase/carsharing.db')
         self.cur = self.conn.cursor()
         self.cur.execute('CREATE TABLE IF NOT EXISTS cars (brand TEXT, model TEXT, price_per_hour INTEGER)')
 
