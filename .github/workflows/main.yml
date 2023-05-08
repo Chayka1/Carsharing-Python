@@ -1,0 +1,21 @@
+name: Python package
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: pip install flake8 black isort
+      - name: Run linter
+        run: flake8 ./
+      - name: Run formatting
+        run: black --check ./ && isort --check ./
